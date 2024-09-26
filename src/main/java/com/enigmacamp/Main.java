@@ -51,14 +51,14 @@ public class Main {
 
     public static void questionNo2_C(Integer number) {
         int x = 0;
-        String opt = "up";
+        boolean flag = true;
         for (int i = 1; i <= number; i++) {
             for(int j = 1; j <= i; j++) {
-                if (x == 1) opt = "up";
-                if (x == number) opt = "down";
+                if (x == 1) flag = true;
+                if (x == number) flag = false;
 
-                if (opt.equals("up")) System.out.print(++x + "");
-                if (opt.equals("down")) System.out.print(--x + "");
+                if (flag) System.out.print(++x + "");
+                if (!flag) System.out.print(--x + "");
             }
             System.out.println();
         }
@@ -73,12 +73,9 @@ public class Main {
             int x = i - 1;
             for(int j = 1; j <= number; j++) {
                 if (j % 2 == 1){
-                    x += (j == 1) ? 1 : marginUp;
-                    System.out.print(x + "\t");
-                }
-                if (j % 2 == 0){
-                    x+=marginDown;
-                    System.out.print(x + "\t");
+                    System.out.print((x += (j == 1) ? 1 : marginUp) + "\t");
+                }else{
+                    System.out.print((x+=marginDown) + "\t");
                 }
             }
             System.out.println();
