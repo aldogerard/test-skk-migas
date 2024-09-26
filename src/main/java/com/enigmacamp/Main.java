@@ -57,8 +57,8 @@ public class Main {
                 if (x == 1) flag = true;
                 if (x == number) flag = false;
 
-                if (flag) System.out.print(++x + "");
-                if (!flag) System.out.print(--x + "");
+                if (flag) System.out.print(++x);
+                if (!flag) System.out.print(--x);
             }
             System.out.println();
         }
